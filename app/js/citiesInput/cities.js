@@ -8,5 +8,5 @@ angular.module("app")
         controller: function(ServiceCities) {
             this.search = ServiceCities.search
         },
-        templateUrl:'app/citiesInput/citiesInput.tmpl.html'
+        templateUrl:'app/js/citiesInput/citiesInput.tmpl.html'
     })

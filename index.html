@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Wheather App</title>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/font-awesome.min.css"/>
 
-    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="app/css/weather-icons.min.css"/>
+    <link rel="stylesheet" href="app/css/weather-icons-wind.min.css"/>
+    <link rel="stylesheet" href="app/css/app.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.7"></script>
@@ -14,18 +17,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 </head>
 <body>
-    {{1+1}}
-    <br/>
-    <wheather></wheather>
+    <wheather-card></wheather-card>
 
     <!--App-->
     <script src="app/app.js"></script>
-    <script src="app/whetherCard/whetherCard.js"></script>
-    <script src="app/citiesInput/cities.js"></script>
-    <script src="app/ServiceCities.js"></script>
-    <script src="app/ServiceWhether.js"></script>
-    <script src="app/daySmall/daySmall.js"></script>
-    <script src="app/dayBig/dayBig.js"></script>
-    <!--<script src="data/daysPrediction.js"></script>-->
+    <script src="app/js/whetherCard/whetherCard.js"></script>
+    <script src="app/js/citiesInput/cities.js"></script>
+    <script src="app/js/ServiceCities.js"></script>
+    <script src="app/js/ServiceWhether.js"></script>
+    <script src="app/js/daySmall/daySmall.js"></script>
+    <script src="app/js/dayBig/dayBig.js"></script>
+    <script src="app/weatherIcons.js"></script>
 </body>
 </html>

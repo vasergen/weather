@@ -1,7 +1,7 @@
 "use strict"
 
 angular.module("app")
-    .component("wheather", {
+    .component("wheatherCard", {
         bindings: {},
         controller: function(ServiceWhether) {
             this.selectedCity = null
@@ -15,11 +15,11 @@ angular.module("app")
                 return ServiceWhether
                     .initWhetherByCityId(this.selectedCity.id)
                     .then((data) => {
+                        console.log('daysPrediction was changed')
                         this.prediction = data
-                        this.predictionPretty = JSON.stringify(data.list, null, 2)
                         this.daysPrediction  = ServiceWhether.getDaysPrediction()
                     })
             }
         },
-        templateUrl: 'app/whetherCard/whetherCard.tmpl.html'
+        templateUrl: 'app/js/whetherCard/whetherCard.tmpl.html'
     })

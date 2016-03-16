@@ -6,5 +6,5 @@ angular.module("app")
         controller: function() {
 
         },
-        templateUrl: 'app/dayBig/dayBig.tmpl.html'
+        templateUrl: 'app/js/dayBig/dayBig.tmpl.html'
     })
