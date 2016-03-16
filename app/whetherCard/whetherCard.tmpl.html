@@ -1,0 +1,22 @@
+<div>
+    <h3>Whether Prediction</h3>
+
+    <button ng-click="$ctrl.getPrediction()">Get Prediction</button>
+
+    <cities-input selected-city="$ctrl.selectedCity"></cities-input>
+    <br/>
+
+    <day-small
+        ng-repeat="(day, dayPrediction) in $ctrl.daysPrediction"
+        day="day"
+        day-prediction="dayPrediction">
+    </day-small>
+
+    <br/>
+    <day-big day-prediction="$ctrl.dayPrediction"></day-big>
+
+    <br/>
+    <pre>
+        {{$ctrl.predictionPretty}}
+    </pre>
+</div>

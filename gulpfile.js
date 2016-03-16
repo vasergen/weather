@@ -3,7 +3,7 @@
 let fs = require('fs')
 let gulp = require('gulp')
 
-gulp.task('cities', (done) => {
+gulp.task('citiesInput', (done) => {
     return fs.readFile('data/city_list.txt', 'utf-8', (err, data) => {
         if(err) throw err
 
@@ -21,7 +21,7 @@ gulp.task('cities', (done) => {
         fs.writeFile("data/cities.json", JSON.stringify(res), (err) => {
             if(err) throw err;
 
-            console.log('Success! The cities file was generated');
+            console.log('Success! The citiesInput file was generated');
             done()
         })
     })

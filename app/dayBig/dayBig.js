@@ -1,10 +1,10 @@
 "use strict"
 
 angular.module("app")
-    .component("wheather", {
+    .component('dayBig', {
         bindings: {},
         controller: function() {
 
         },
-        templateUrl: 'app/whether/whether.tmpl.html'
+        templateUrl: 'app/dayBig/dayBig.tmpl.html'
     })
