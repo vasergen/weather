@@ -1,3 +1,14 @@
 <div>
-    Cities!!!
+    {{$ctrl.selectedCity}}
+
+    <!--bs-options="locations.city for locations in $ctrl.locations"-->
+
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Enter state"
+        ng-model="$ctrl.selectedCity"
+        bs-options="locations.city for locations in $ctrl.search($ctrl.selectedCity)"
+        bs-typeahead
+    >
 </div>
