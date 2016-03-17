@@ -3,8 +3,8 @@
 angular.module("app")
     .component("daySmall", {
         bindings: {
-            day: '<',
-            dayPrediction: '<'
+            day: '=',
+            dayPrediction: '='
         },
         controller: function() {
             this.dayNameShort = moment(this.day).format('ddd')
@@ -14,8 +14,8 @@ angular.module("app")
             this.whetherMainArr = _.map(this.dayPrediction, 'weather[0].main')
             this.whetherDescriptionArr = _.map(this.dayPrediction, 'weather[0].description')
 
-            this.dayPredictionD = _.filter(this.dayPrediction, value => value.weather[0].icon.endsWith('d'))
-            this.dayPredicitonN = _.filter(this.dayPrediction, value => value.weather[0].icon.endsWith('n'))
+            this.dayPredictionD = _.filter(this.dayPrediction, value => value.sys.pod.endsWith('d'))
+            this.dayPredicitonN = _.filter(this.dayPrediction, value => value.sys.pod.endsWith('n'))
 
             this.whetherIconsArrD = _.map(this.dayPredictionD, 'weather[0].icon')
             this.whetherIconD = _.flowRight(_.last, _.values, _.invert, _.countBy)(this.whetherIconsArrD)
@@ -31,7 +31,7 @@ angular.module("app")
             function getWhetherIconClass(whetherId, isDay) {
                 let prefix = 'wi wi-'
                 let code = whetherId
-                var icon = weatherIcons[code].icon
+                var icon = weatherIcons[code] && weatherIcons[code].icon
 
                 if (isDay && !(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
                     icon = 'day-' + icon;
