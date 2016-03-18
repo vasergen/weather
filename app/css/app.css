@@ -1,12 +1,15 @@
+/******DaySmall******/
 .day-small  {
     padding: 15px;
     margin: 5px;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    color: #444;
 }
 
-.icon-wrap {
-    font-size: 40px;
+.day-small .icon {
+    padding: 10px;
     display: inline-block;
     font-family: 'weathericons';
     font-style: normal;
@@ -14,10 +17,55 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
     min-width: 54px;
     text-align: center;
     color: #924da3;
 }
+
+.day-small .icon--small {
+    font-size: 40px;
+}
+
+.day-small .temp {
+    color: #444;
+}
+
+.day-small .number {
+    font-size: 30px;
+    color: #666;
+}
+/****DaySmall END*****/
+
+
+/*******DayBig*******/
+.day-big {
+    /*display: inline-block;*/
+    width: 700px;
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    color: #444;
+}
+/*******DayBig END*******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

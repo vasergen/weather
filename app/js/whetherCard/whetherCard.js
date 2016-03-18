@@ -6,8 +6,6 @@ angular.module("app")
         controller: function(ServiceWhether, $scope) {
             this.selectedCity = null
 
-            console.log('$scope', $scope.$watch);
-
             $scope.$watch(() => this.selectedCity, (newValue, oldValue) => {
                 if(newValue !== oldValue && typeof newValue == "object") {
                     this.getPrediction()
@@ -26,6 +24,9 @@ angular.module("app")
                         this.daysPrediction  = ServiceWhether.getDaysPrediction()
                     })
             }
+
+            this.selectedCity = {"id":"691650","city":"Ternopil"}
+            this.getPrediction()
         },
         templateUrl: 'app/js/whetherCard/whetherCard.tmpl.html'
     })

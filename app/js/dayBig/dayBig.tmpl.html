@@ -1,3 +1,22 @@
-<div>
-    Day Big
+<div class="day-big">
+    <div class="row">
+        <div class="col-xs-3">
+            <date-panel
+                    day-name="$ctrl.dayName"
+                    number="$ctrl.number"
+                    month-name="$ctrl.monthName">
+            </date-panel>
+        </div>
+        <div class="col-xs-9">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr ng-repeat="row in $ctrl.table">
+                        <td ng-repeat="col in row track by $index">
+                            {{col}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

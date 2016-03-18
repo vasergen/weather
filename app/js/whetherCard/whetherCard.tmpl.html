@@ -1,20 +1,27 @@
 <div>
     <h3>Whether Prediction</h3>
 
-    <button ng-click="$ctrl.getPrediction()">Get Prediction</button>
+    <div class="row">
+        <div class="col-xs-6">
+            <cities-input selected-city="$ctrl.selectedCity"></cities-input>
+        </div>
+    </div>
 
-    selectedCity: {{$ctrl.selectedCity}}
-    <cities-input selected-city="$ctrl.selectedCity"></cities-input>
-    <br/>
+    <div class="row">
+        <div class="col-xs-12">
+            <day-small
+                ng-repeat="(day, dayPrediction) in $ctrl.daysPrediction"
+                day-prediction="dayPrediction">
+            </day-small>
 
-    <day-small
-        ng-repeat="(day, dayPrediction) in $ctrl.daysPrediction"
-        day="day"
-        day-prediction="dayPrediction">
-    </day-small>
+            <day-big
+                ng-repeat="(day, dayPrediction) in $ctrl.daysPrediction"
+                day-prediction="dayPrediction">
+            </day-big>
+        </div>
+    </div>
 
-    <br/>
-    <day-big day-prediction="$ctrl.dayPrediction"></day-big>
 
-    <br/>
+
+
 </div>
