@@ -11,7 +11,6 @@ angular.module("app")
 
             function getWhetherIconClass (code, isDay) {
                 let icon = weatherIcons[code] && weatherIcons[code].icon
-                console.log('weatherIcons[code]', code);
                 if (isDay && !(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
                     icon = 'day-' + icon;
                 }

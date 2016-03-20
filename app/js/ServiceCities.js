@@ -5,10 +5,7 @@ angular.module("app")
         let locations = []
         let isData = false
 
-        let getUrl = () => {
-            let url = ""
-            if($location.$$host == 'localhost')
-                return  "".concat($location.$$protocol,'://',$location.$$host,':',$location.$$port,'/data/cities.json')
+        function getUrl() {
             return "http://vasergen.github.io/wheather/data/cities.json"
         }
 
