@@ -13,7 +13,7 @@ angular.module("app")
         }
 
         let getData = () => {
-            return $http.get(url).then((responce) => {
+            return $http.get(getUrl()).then((responce) => {
                 return responce.data
             })
         }
