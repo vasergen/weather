@@ -20,10 +20,6 @@ angular.module("app")
             this.whetherIdN = pdp.whetherIdN()
             this.whetherDescription = pdp.whetherDescription()
             this.description = pdp.whetherDescription()
-
-
-            console.log('this.whetherDescription', this.whetherDescription);
-
             this.whetherDescriptionD = pdp.whetherDescriptionD()
             this.whetherDescriptionN = pdp.whetherDescriptionN()
             this.dayName = pdp.dayName()

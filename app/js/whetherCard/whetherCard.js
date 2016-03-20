@@ -30,9 +30,6 @@ angular.module("app")
                         this.daysPrediction  = ServiceWhether.getDaysPrediction()
                     })
             }
-
-            this.selectedCity = {"id":"691650","city":"Ternopil"}
-            this.getPrediction()
         },
         templateUrl: 'app/js/whetherCard/whetherCard.tmpl.html'
     })

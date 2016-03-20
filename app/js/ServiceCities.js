@@ -4,7 +4,14 @@ angular.module("app")
     .service('ServiceCities', function($http, $location) {
         let locations = []
         let isData = false
-        let url =  "".concat($location.$$protocol,'://',$location.$$host,':',$location.$$port,'/data/cities.json')
+
+        let getUrl = () => {
+            let url = ""
+            if($location.$$host == 'localhost')
+                return  "".concat($location.$$protocol,'://',$location.$$host,':',$location.$$port,'/data/cities.json')
+            return "http://vasergen.github.io/wheather/data/cities.json"
+        }
+
         let getData = () => {
             return $http.get(url).then((responce) => {
                 return responce.data
