@@ -1,18 +1,35 @@
 <div class="day-big">
     <div class="row">
-        <div class="col-xs-3">
-            <date-panel
+        <div class="col-xs-2">
+            <date-block
                     day-name="$ctrl.dayName"
                     number="$ctrl.number"
                     month-name="$ctrl.monthName">
-            </date-panel>
+            </date-block>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    {{$ctrl.description}}
+                </div>
+            </div>
         </div>
-        <div class="col-xs-9">
-            <table class="table table-bordered">
+        <div class="col-xs-10">
+            <table class="table table-whether">
                 <tbody>
-                    <tr ng-repeat="row in $ctrl.table">
-                        <td ng-repeat="col in row track by $index">
+                    <tr ng-repeat="(key, row) in $ctrl.table">
+                        <td class="pull-right row-description">{{key}}</td>
+                        <td
+                            ng-if="['hours', 'pressure', 'humidity'].indexOf(key) > -1"
+                            ng-repeat="col in row track by $index"
+                            class="row-{{key}}"
+                            >
                             {{col}}
+                        </td>
+                        <td ng-if="key === 'temperature'" ng-repeat="col in row track by $index">
+                            <temperature data="col"></temperature>
+                        </td>
+                        <td ng-if="key === 'whether'" ng-repeat="col in row track by $index">
+                            <whether-icon icon-id = "col"></whether-icon>
                         </td>
                     </tr>
                 </tbody>

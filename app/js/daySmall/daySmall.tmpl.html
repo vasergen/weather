@@ -1,23 +1,37 @@
-<div class="day-small" ng-if="$ctrl.whetherIconD">
-    <date-panel
+<div class="day-small">
+    <date-block
         day-name="$ctrl.dayName"
         number="$ctrl.number"
         month-name="$ctrl.monthName">
-    </date-panel>
+    </date-block>
 
     <div class="row">
         <div class="col-xs-12 text-center">
-            <span class="icon icon--small">
-                <i class="wi-fw {{$ctrl.whetherIconClass}}"></i>
-            </span>
+            <whether-icon
+                icon-id = "$ctrl.whetherIdD || $ctrl.whetherId",
+                class-name = "'icon--small'">
+            </whether-icon>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12">
-            <span class="temp">
-                {{$ctrl.tempMin}}℃&nbsp;&nbsp;{{$ctrl.tempMax}}℃
-            </span>
+            <div class="row">
+                <div class="col-xs-6 text-center">
+                    <span>min</span>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <span>max</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 text-center">
+                    <temperature data="$ctrl.tempMin"></temperature>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <temperature data="$ctrl.tempMax"></temperature>
+                </div>
+            </div>
         </div>
     </div>
 

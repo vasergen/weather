@@ -1,11 +1,11 @@
 "use strict"
 
 angular.module("app")
-    .component("datePanel", {
+    .component("dateBlock", {
         bindings: {
             dayName: '<',
             number: '<',
             monthName: '<'
         },
-        templateUrl: "app/js/datePanel/datePanel.tmpl.html"
+        templateUrl: "app/js/dateBlock/dateBlock.tmpl.html"
     })

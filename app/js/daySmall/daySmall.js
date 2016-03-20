@@ -25,7 +25,6 @@ angular.module("app")
             this.monthNameShort = ParseDayPrediction.monthNameShort()
             this.number = ParseDayPrediction.number()
             this.date = ParseDayPrediction.date()
-            this.whetherIconClass = ParseDayPrediction.whetherIconClass(this.whetherIdD, true)
         },
         templateUrl: 'app/js/daySmall/daySmall.tmpl.html'
     })

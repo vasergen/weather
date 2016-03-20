@@ -27,28 +27,17 @@ angular.module("app")
         let whetherDescription = () => _whetherDescription(dayPrediction)
         let whetherDescriptionD = () => _whetherDescription(dayPredictionD)
         let whetherDescriptionN = () => _whetherDescription(dayPredictionN)
-
         let date = () => moment.unix(dayPrediction[0].dt).format("YYYY-MM-DD")
         let dayName = () => moment(date()).format('dddd')
         let dayNameShort = () => moment(date()).format('ddd')
         let monthName = () => moment(date()).format('MMMM')
         let monthNameShort = () => moment(date()).format('MMM')
         let number = () => moment(date()).format('D')
-
-        let hoursArr = () => _.map(_.map(dayPrediction, 'dt'), (time) => moment.unix(time).hour())
+        let hoursArr = () => _.map(_.map(dayPrediction, 'dt'), (time) => moment.unix(time).hour() + ':00' )
         let whetherIdArr = () => _.map(dayPrediction, 'weather[0].id')
         let tempArr = () => _.map(dayPrediction, 'main.temp')
         let pressureArr = () => _.map(dayPrediction, 'main.pressure')
         let humidityArr = () => _.map(dayPrediction, 'main.humidity')
-
-
-        let whetherIconClass = (code, isDay) => {
-            let icon = weatherIcons[code] && weatherIcons[code].icon
-            if (isDay && !(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-                icon = 'day-' + icon;
-            }
-            return 'wi wi-' + icon
-        }
 
         return {
             init,
@@ -69,7 +58,6 @@ angular.module("app")
             monthName,
             monthNameShort,
             number,
-            whetherIconClass,
             hoursArr,
             whetherIdArr,
             tempArr,

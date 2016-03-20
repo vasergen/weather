@@ -5,6 +5,7 @@ angular.module("app")
         bindings: {},
         controller: function(ServiceWhether, $scope) {
             this.selectedCity = null
+            this.selectedDay = null
 
             $scope.$watch(() => this.selectedCity, (newValue, oldValue) => {
                 if(newValue !== oldValue && typeof newValue == "object") {
@@ -12,11 +13,16 @@ angular.module("app")
                 }
             })
 
+            this.setDay = function(day) {
+                this.selectedDay = day
+            }
+
             this.getPrediction = function() {
                 if(!this.selectedCity || !this.selectedCity.id)
                     return
 
                 this.daysPrediction = null
+                this.selectedDay = null
 
                 return ServiceWhether
                     .initWhetherByCityId(this.selectedCity.id)
