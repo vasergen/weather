@@ -1,6 +1,6 @@
 "use strict"
 angular.module("app")
-    .service("ParseDayPrediction", function() {
+    .service("ServiceParseDayPrediction", function() {
         //private
         let dayPrediction = null
         let dayPredictionD = null

@@ -1,10 +1,14 @@
-<div>
-    <input
-        type="text"
-        class="form-control"
-        placeholder="new York City"
-        ng-model="$ctrl.selectedCity"
-        bs-options="locations.city for locations in $ctrl.search($ctrl.selectedCity)"
-        bs-typeahead
-    >
-</div>
+<form class="form-inline">
+    <div class="form-group">
+        <label class="label-city-input" for="city-input">Type City Name: </label>
+        <input
+            type="text"
+            id="city-input"
+            class="form-control"
+            placeholder="New York City"
+            ng-model="$ctrl.selectedCity"
+            bs-options="locations.city for locations in $ctrl.search($ctrl.selectedCity)"
+            bs-typeahead
+            >
+    </div>
+</form>

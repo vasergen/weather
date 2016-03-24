@@ -3,28 +3,22 @@
 angular.module("app")
     .component("daySmall", {
         bindings: {
-            dayPrediction: '<'
+            dayPrediction: '<',
+            selectedDay: '<',
+            day: '<'
         },
-        controller: function(ParseDayPrediction) {
-            ParseDayPrediction.init(this.dayPrediction)
+        controller: function(ServiceParseDayPrediction) {
+            let pdp = ServiceParseDayPrediction
+            pdp.init(this.dayPrediction)
 
-            this.tempMax = ParseDayPrediction.tempMax()
-            this.tempMin = ParseDayPrediction.tempMin()
-            this.whetherIcon = ParseDayPrediction.whetherIcon()
-            this.whetherIconD = ParseDayPrediction.whetherIconD()
-            this.whetherIconN = ParseDayPrediction.whetherIconN()
-            this.whetherId = ParseDayPrediction.whetherId()
-            this.whetherIdD = ParseDayPrediction.whetherIdD()
-            this.whetherIdN = ParseDayPrediction.whetherIdN()
-            this.whetherDescription = ParseDayPrediction.whetherDescription()
-            this.whetherDescriptionD = ParseDayPrediction.whetherDescriptionD()
-            this.whetherDescriptionN = ParseDayPrediction.whetherDescriptionN()
-            this.dayName = ParseDayPrediction.dayName()
-            this.dayNameShort = ParseDayPrediction.dayNameShort()
-            this.monthName = ParseDayPrediction.monthName()
-            this.monthNameShort = ParseDayPrediction.monthNameShort()
-            this.number = ParseDayPrediction.number()
-            this.date = ParseDayPrediction.date()
+            this.tempMax = pdp.tempMax()
+            this.tempMin = pdp.tempMin()
+            this.whetherId = pdp.whetherId()
+            this.whetherIdD = pdp.whetherIdD()
+            this.dayName = pdp.dayName()
+            this.monthName = pdp.monthName()
+            this.number = pdp.number()
+            this.date = pdp.date()
         },
         templateUrl: 'app/js/daySmall/daySmall.tmpl.html'
     })

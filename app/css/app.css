@@ -1,31 +1,38 @@
-body {
-    padding: 50px;
-}
-
 /******DaySmall******/
 .day-small  {
-    padding: 7px;
-    margin: 0;
+    background: white;
+    padding: 10px;
+    margin-right: 2px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 7px;
+    border-bottom: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
     color: #444;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.day-small-active {
+    /*background: #cccccc;*/
+    background: white;
+    z-index: 10;
+}
+
+.day-small-active .date-panel .number {
+    font-size: 35px;
 }
 
 .day-small .icon--small {
     min-width: 25px;
     padding: 7px;
+    margin-top: 15px;
     font-size: 40px;
 }
 
 .day-small .temp {
     color: #444;
-}
-
-.day-small .number {
-    font-size: 30px;
-    color: #666;
 }
 /****DaySmall END*****/
 
@@ -43,16 +50,39 @@ body {
 }
 /*icon*/
 
+.date-panel .number {
+    font-size: 30px;
+    color: #666;
+}
+
+.date-panel .day-name {
+    font-size: 18px;
+}
+
+.date-panel .month-name {
+    border-bottom: 1px dashed;
+}
 
 /*******DayBig*******/
+.day-small-wrapper {
+    /*outline: 1px solid red;*/
+    margin-bottom: -6px;
+}
+.day-big-wrapper {
+    /*outline: 1px solid red;*/
+}
+
 .day-big {
-    /*display: inline-block;*/
-    width: 800px;
+    width: 900px;
     padding: 15px;
-    margin: 5px;
+    margin: 0;
     border: 1px solid #ccc;
     border-radius: 7px;
+    border-top-left-radius: 0;
     color: #444;
+    background: white;
+    position: relative;
+    z-index: 2;
 }
 
 .day-big .table-whether {
@@ -68,25 +98,8 @@ body {
     border: none;
 }
 
+label {
+    font-weight: 300;
+}
+
 /*******DayBig END*******/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
