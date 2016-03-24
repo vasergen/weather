@@ -16,7 +16,6 @@
 }
 
 .day-small-active {
-    /*background: #cccccc;*/
     background: white;
     z-index: 10;
 }
@@ -87,12 +86,12 @@
     z-index: 2;
 }
 
-.day-big .table-whether .row-description {
+.day-big .table-weather .row-description {
     color: #666666;
     border: none;
 }
 
-.day-big .table-whether .row-hours {
+.day-big .table-weather .row-hours {
     border: none;
 }
 
